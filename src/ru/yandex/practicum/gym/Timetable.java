@@ -14,7 +14,7 @@ public class Timetable {
         if (dayMap != null && !dayMap.isEmpty()) {
             List<TrainingSession> result = new ArrayList();
 
-            for(List<TrainingSession> sessions : dayMap.values()) {
+            for (List<TrainingSession> sessions : dayMap.values()) {
                 result.addAll(sessions);
             }
 
@@ -32,9 +32,9 @@ public class Timetable {
     public List<CounterOfTrainings> getCountByCoaches() {
         Map<Coach, Integer> counts = new HashMap();
 
-        for(TreeMap<TimeOfDay, List<TrainingSession>> dayMap : this.timetable.values()) {
-            for(List<TrainingSession> sessions : dayMap.values()) {
-                for(TrainingSession session : sessions) {
+        for (TreeMap<TimeOfDay, List<TrainingSession>> dayMap : this.timetable.values()) {
+            for (List<TrainingSession> sessions : dayMap.values()) {
+                for (TrainingSession session : sessions) {
                     Coach coach = session.getCoach();
                     counts.put(coach, (Integer)counts.getOrDefault(coach, 0) + 1);
                 }
