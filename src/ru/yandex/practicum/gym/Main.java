@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Вас приветствует Gym master.");
         boolean exit = false;
 
-        while(!exit) {
+        while (!exit) {
             System.out.println("\nЧто вы хотите сделать?");
             System.out.println("1. Посмотреть расписание на неделю");
             System.out.println("2. Добавить новую тренировку");
@@ -61,7 +61,7 @@ public class Main {
     }
 
     private static void showWeekSchedule() {
-        for(DayOfWeek day : DayOfWeek.values()) {
+        for (DayOfWeek day : DayOfWeek.values()) {
             List<TrainingSession> sessions = timetable.getTrainingSessionsForDay(day);
             System.out.println("\n" + String.valueOf(day) + ":");
             if (sessions.isEmpty()) {
@@ -76,7 +76,7 @@ public class Main {
     private static void showScheduleForSelectedDay() {
         System.out.println("Выберите день недели:");
 
-        for(int i = 0; i < DayOfWeek.values().length; ++i) {
+        for (int i = 0; i < DayOfWeek.values().length; ++i) {
             System.out.println(i + 1 + ". " + String.valueOf(DayOfWeek.values()[i]));
         }
 
@@ -112,7 +112,7 @@ public class Main {
             Coach coach = new Coach(surname, name, middle);
             System.out.println("День недели:");
 
-            for(int i = 0; i < DayOfWeek.values().length; ++i) {
+            for (int i = 0; i < DayOfWeek.values().length; ++i) {
                 System.out.println(i + 1 + ". " + String.valueOf(DayOfWeek.values()[i]));
             }
 
@@ -136,7 +136,7 @@ public class Main {
         if (counts.isEmpty()) {
             System.out.println("Нет занятий");
         } else {
-            for(CounterOfTrainings c : counts) {
+            for (CounterOfTrainings c : counts) {
                 PrintStream var10000 = System.out;
                 String var10001 = String.valueOf(c.getCoach());
                 var10000.println(var10001 + " — " + c.getCount() + " занятий");
