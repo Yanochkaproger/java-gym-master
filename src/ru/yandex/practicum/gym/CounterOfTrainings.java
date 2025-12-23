@@ -1,3 +1,5 @@
+package ru.yandex.practicum.gym;
+
 public class CounterOfTrainings {
     private final Coach coach;
     private final int count;
@@ -8,10 +10,10 @@ public class CounterOfTrainings {
     }
 
     public Coach getCoach() {
-        return coach;
+        return this.coach;
     }
 
     public int getCount() {
-        return count;
+        return this.count;
     }
 }

@@ -3,13 +3,9 @@ package ru.yandex.practicum.gym;
 import java.util.Objects;
 
 public class Coach {
-
-    //фамилия
-    private String surname;
-    //имя
-    private String name;
-    //отчество
-    private String middleName;
+    private final String surname;
+    private final String name;
+    private final String middleName;
 
     public Coach(String surname, String name, String middleName) {
         this.surname = surname;
@@ -17,28 +13,34 @@ public class Coach {
         this.middleName = middleName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Coach coach = (Coach) o;
-        return Objects.equals(surname, coach.surname) && Objects.equals(name, coach.name) && Objects.equals(middleName, coach.middleName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(surname, name, middleName);
-    }
-
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getMiddleName() {
-        return middleName;
+        return this.middleName;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        } else if (!(o instanceof Coach)) {
+            return false;
+        } else {
+            Coach coach = (Coach)o;
+            return this.surname.equals(coach.surname) && this.name.equals(coach.name) && this.middleName.equals(coach.middleName);
+        }
+    }
+
+    public int hashCode() {
+        return Objects.hash(new Object[]{this.surname, this.name, this.middleName});
+    }
+
+    public String toString() {
+        return this.surname + " " + this.name + " " + this.middleName;
     }
 }

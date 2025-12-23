@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import ru.yandex.practicum.gym.*;
+
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
