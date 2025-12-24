@@ -1,12 +1,9 @@
 package ru.yandex.practicum.gym;
 
 public class Group {
-    //название группы
-    private String title;
-    //тип (взрослая или детская)
-    private Age age;
-    //длительность (в минутах)
-    private int duration;
+    private final String title;
+    private final Age age;
+    private final int duration;
 
     public Group(String title, Age age, int duration) {
         this.title = title;
@@ -15,14 +12,19 @@ public class Group {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public Age getAge() {
-        return age;
+        return this.age;
     }
 
     public int getDuration() {
-        return duration;
+        return this.duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Group{title='" + this.title + "', age=" + this.age + ", duration=" + this.duration + "}";
     }
 }
