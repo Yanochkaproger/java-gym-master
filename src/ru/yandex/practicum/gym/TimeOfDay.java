@@ -23,27 +23,32 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
         return this.minutes;
     }
 
+    @Override
     public int compareTo(TimeOfDay other) {
-        return this.hours != other.hours ? Integer.compare(this.hours, other.hours) : Integer.compare(this.minutes, other.minutes);
+        return this.hours != other.hours
+                ? Integer.compare(this.hours, other.hours)
+                : Integer.compare(this.minutes, other.minutes);
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         } else if (!(o instanceof TimeOfDay)) {
             return false;
         } else {
-            TimeOfDay that = (TimeOfDay)o;
+            TimeOfDay that = (TimeOfDay) o;
             return this.hours == that.hours && this.minutes == that.minutes;
         }
     }
 
+    @Override
     public int hashCode() {
-        return Objects.hash(new Object[]{this.hours, this.minutes});
+        return Objects.hash(this.hours, this.minutes);
     }
 
+    @Override
     public String toString() {
         return String.format("%02d:%02d", this.hours, this.minutes);
     }
 }
-

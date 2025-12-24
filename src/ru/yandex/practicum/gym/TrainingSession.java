@@ -29,9 +29,12 @@ public class TrainingSession {
         return this.timeOfDay;
     }
 
+    @Override
     public String toString() {
-        String var10000 = this.group.getTitle();
-        return "Группа - " + var10000 + ", Тренер - " + String.valueOf(this.coach) + ", День - " + String.valueOf(this.dayOfWeek) + ", Время - " + String.valueOf(this.timeOfDay);
+        return "Группа - " + this.group.getTitle() +
+                ", Тренер - " + this.coach +
+                ", День - " + this.dayOfWeek +
+                ", Время - " + this.timeOfDay;
     }
 }
 

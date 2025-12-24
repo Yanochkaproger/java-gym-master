@@ -23,8 +23,8 @@ public class Group {
         return this.duration;
     }
 
+    @Override
     public String toString() {
-        String var10000 = this.title;
-        return "Group{title='" + var10000 + "', age=" + String.valueOf(this.age) + ", duration=" + this.duration + "}";
+        return "Group{title='" + this.title + "', age=" + this.age + ", duration=" + this.duration + "}";
     }
 }
